@@ -1,5 +1,5 @@
 /* ===================================================
-   style.css – Personlig nettside for Sabrine Hansen
+   style.css – Portefølje for Sabrine Hansen
    =================================================== */
 
 /* ---------- Reset & base ---------- */
@@ -19,7 +19,7 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   line-height: 1.7;
-  color: #1e293b;
+  color: #3b332b;
   background-color: #ffffff;
 }
 
@@ -39,16 +39,16 @@ ul {
 
 /* ---------- CSS-variabler ---------- */
 :root {
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --primary-light: #e0e7ff;
-  --accent: #f59e0b;
-  --bg-alt: #f8fafc;
-  --text-muted: #64748b;
-  --border: #e2e8f0;
+  --primary: #c79c5a;
+  --primary-dark: #a97f3f;
+  --primary-light: #e7d3b5;
+  --accent: #c79c5a;
+  --bg-alt: #fbf8f3;
+  --text-muted: #8a7d6f;
+  --border: #d9c8b2;
   --radius: 12px;
-  --shadow: 0 4px 24px rgba(99, 102, 241, 0.08);
-  --shadow-hover: 0 10px 34px rgba(99, 102, 241, 0.2);
+  --shadow: 0 4px 24px rgba(169, 127, 63, 0.1);
+  --shadow-hover: 0 10px 34px rgba(169, 127, 63, 0.22);
   --transition: 0.25s ease;
   --container: 1100px;
   --section-y: clamp(3.25rem, 6vw, 5rem);
@@ -149,7 +149,7 @@ ul {
     flex-direction: column;
     gap: 0;
     border-bottom: 1px solid var(--border);
-    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+    box-shadow: 0 10px 30px rgba(90, 74, 56, 0.1);
   }
 
   .nav-links.open {
@@ -188,7 +188,7 @@ ul {
   justify-content: center;
   text-align: center;
   padding: 4rem 1.5rem;
-  background: linear-gradient(135deg, #eef2ff 0%, #fafafa 50%, #f0fdf4 100%);
+  background: linear-gradient(135deg, #f7ede0 0%, #fbf8f3 50%, #f2e8d8 100%);
   position: relative;
   overflow: hidden;
 }
@@ -200,7 +200,7 @@ ul {
   right: -120px;
   width: 480px;
   height: 480px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(199, 156, 90, 0.16) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -212,7 +212,7 @@ ul {
   left: -80px;
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(169, 156, 143, 0.16) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -235,7 +235,7 @@ ul {
   justify-content: center;
   margin: 0 auto 1.75rem;
   border: 4px solid #fff;
-  box-shadow: 0 12px 38px rgba(99, 102, 241, 0.28);
+  box-shadow: 0 12px 38px rgba(169, 127, 63, 0.3);
   background-color: #fff;
 }
 
@@ -249,7 +249,7 @@ ul {
 .hero-name {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  color: #0f172a;
+  color: #3b332b;
   margin-bottom: 0.5rem;
   letter-spacing: -0.5px;
 }
@@ -280,14 +280,14 @@ ul {
   font-size: 0.95rem;
   letter-spacing: 0.3px;
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 4px 16px rgba(169, 127, 63, 0.35);
   will-change: transform;
 }
 
 .btn-primary:hover {
   background: var(--primary-dark);
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 14px 34px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 14px 34px rgba(169, 127, 63, 0.35);
 }
 
 @media (max-width: 600px) {
@@ -314,7 +314,7 @@ ul {
 .section-title {
   font-size: clamp(1.6rem, 4vw, 2.25rem);
   font-weight: 700;
-  color: #0f172a;
+  color: #3b332b;
   text-align: center;
   margin-bottom: 0.5rem;
   position: relative;
@@ -343,7 +343,7 @@ ul {
 }
 
 .about-text p {
-  color: #334155;
+  color: #4a3f34;
   margin-bottom: 1rem;
   font-size: 1rem;
   line-height: 1.85;
@@ -415,6 +415,14 @@ ul {
   margin-bottom: 0.75rem;
 }
 
+.project-status {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
 .experience-header {
   display: flex;
   justify-content: space-between;
@@ -465,8 +473,8 @@ ul {
 
 /* ---------- Bunntekst & Animasjon ---------- */
 .footer {
-  background: #0f172a;
-  color: #94a3b8;
+  background: #4a3f34;
+  color: #d9c8b2;
   text-align: center;
   padding: 1.75rem;
   font-size: 0.875rem;
