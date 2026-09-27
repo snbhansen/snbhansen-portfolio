@@ -10,7 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=2" />
+    <link rel="stylesheet" href="css/style.css?v=3" />
+    <script>
+      // Setter lagret tema før siden males, for å unngå glimt av feil farge
+      document.documentElement.dataset.theme = localStorage.getItem("theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    </script>
   </head>
   <body>
     <header class="navbar">
@@ -23,6 +28,22 @@
           <li><a href="#ferdigheter">Ferdigheter</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Bytt mellom lys og mørk modus">
+          <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" />
+            <line x1="12" y1="1.5" x2="12" y2="4" />
+            <line x1="12" y1="20" x2="12" y2="22.5" />
+            <line x1="1.5" y1="12" x2="4" y2="12" />
+            <line x1="20" y1="12" x2="22.5" y2="12" />
+            <line x1="4.4" y1="4.4" x2="6.1" y2="6.1" />
+            <line x1="17.9" y1="17.9" x2="19.6" y2="19.6" />
+            <line x1="4.4" y1="19.6" x2="6.1" y2="17.9" />
+            <line x1="17.9" y1="6.1" x2="19.6" y2="4.4" />
+          </svg>
+          <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 14.5a8.5 8.5 0 1 1-10.5-10.3 7 7 0 0 0 10.5 10.3Z" />
+          </svg>
+        </button>
         <button class="nav-toggle" aria-label="Åpne meny">&#9776;</button>
       </nav>
     </header>
@@ -30,7 +51,7 @@
     <section class="hero" id="hjem">
       <div class="hero-content">
         <div class="hero-avatar" aria-label="Profilbilde av Sabrine Hansen">
-            <img src="Profil.png" alt="Sabrine Hansen" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            <img src="assets/images/Profil.png" alt="Sabrine Hansen" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
         </div>
         <h1 class="hero-name">Sabrine Hansen</h1>
         <p class="hero-tagline">Bachelorstudent i IT & Informasjonssystemer</p>
@@ -214,31 +235,6 @@
       <p>&copy; 2026 Sabrine Hansen. Alle rettigheter forbeholdt.</p>
     </footer>
 
-    <script>
-      // Mobilmeny-toggle
-      const toggle = document.querySelector(".nav-toggle");
-      const navLinks = document.querySelector(".nav-links");
-      toggle.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
-      });
-
-      // Lukk meny ved klikk på lenke
-      document.querySelectorAll(".nav-links a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("open");
-        });
-      });
-
-      // Scroll-reveal (fade-in)
-      const revealElements = document.querySelectorAll(".reveal");
-      const revealObserver = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("reveal--visible");
-            }
-          });
-        }, { threshold: 0.1 });
-      revealElements.forEach((el) => revealObserver.observe(el));
-    </script>
+    <script src="js/main.js?v=1"></script>
   </body>
 </html>
